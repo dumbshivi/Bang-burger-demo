@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bang Burger — Fictional Demo</title>
+<style>
+:root{--gold:#ffae00;--bg:#090909;--card:#151515;--muted:#b9b9b9}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.94);backdrop-filter:blur(12px);border-bottom:1px solid #242424}
+.nav{max-width:1150px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:900;font-size:22px;line-height:.9;letter-spacing:-1px}.logo span{color:var(--gold)}
+nav{display:flex;gap:25px}nav a{font-size:14px;color:#ddd}nav a:hover{color:var(--gold)}
+.btn{display:inline-block;background:var(--gold);color:#111;padding:12px 19px;border-radius:10px;font-weight:800;border:0;cursor:pointer}
+.btn.dark{background:transparent;color:#fff;border:1px solid #a86f00}
+.hero{min-height:78vh;display:grid;place-items:center;position:relative;overflow:hidden;background:
+radial-gradient(circle at 78% 48%,rgba(255,153,0,.28),transparent 28%),
+radial-gradient(circle at 55% 30%,rgba(255,255,255,.06),transparent 25%),
+linear-gradient(120deg,#080808,#17110a 55%,#090909)}
+.hero:before{content:"🍔";position:absolute;right:5%;font-size:min(42vw,520px);opacity:.12;filter:drop-shadow(0 0 30px #ff9d00)}
+.hero-content{width:min(1150px,92%);position:relative;z-index:2;padding:90px 0}
+.kicker{color:var(--gold);font-weight:800;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(54px,9vw,110px);line-height:.88;margin:16px 0;font-weight:1000;letter-spacing:-5px}
+h1 span{color:var(--gold)}
+.hero p{max-width:520px;color:#ddd;font-size:18px;margin-bottom:28px}.actions{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:80px 5%}.wrap{max-width:1150px;margin:auto}
+.title{text-align:center;font-size:42px;margin-bottom:45px}.title span{color:var(--gold)}
+.menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:linear-gradient(145deg,#191919,#101010);border:1px solid #282828;border-radius:18px;padding:18px;transition:.25s}
+.card:hover{transform:translateY(-6px);border-color:#8d5e00}
+.food{height:150px;border-radius:13px;background:radial-gradient(circle at 50% 55%,#eaa31d 0 9%,#5a2811 10% 18%,#2d170d 19% 25%,#d98213 26% 31%,#5c2510 32% 38%,#e3a226 39% 45%,transparent 46%),#21150d;display:grid;place-items:center;font-size:72px;margin-bottom:15px}
+.card h3{margin-bottom:5px}.card p{color:var(--muted);font-size:14px;min-height:68px}.price{color:var(--gold);font-size:21px;font-weight:900;margin-top:10px}
+.about{background:#101010}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.about h2{font-size:44px;margin-bottom:18px}.about p{color:#bbb;margin-bottom:16px}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.feature{padding:22px;background:#181818;border-radius:14px}.feature b{display:block;color:var(--gold);font-size:18px;margin-bottom:5px}
+.gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.shot{height:180px;border-radius:15px;background:linear-gradient(145deg,#24150b,#6d320f 45%,#16100b);display:grid;place-items:center;font-size:58px;border:1px solid #292929}
+.contact{background:#0d0d0d}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.contact-card{background:#171717;padding:28px;border-radius:16px}.contact-card h3{margin-bottom:10px;color:var(--gold)}.contact-card p{color:#ccc}
+footer{padding:25px 5%;text-align:center;color:#888;border-top:1px solid #222;font-size:14px}
+.whatsapp{position:fixed;right:22px;bottom:22px;background:#20c96b;color:white;padding:14px 20px;border-radius:50px;font-weight:900;z-index:30;box-shadow:0 8px 25px #000}
+.notice{font-size:12px;color:#777;text-align:center;padding:10px;background:#050505}
+@media(max-width:850px){nav{display:none}.menu-grid{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid{grid-template-columns:1fr}.hero:before{right:-20%;opacity:.1}}
+@media(max-width:520px){section{padding:60px 5%}.menu-grid{grid-template-columns:1fr}h1{letter-spacing:-3px}.food{height:170px}}
+</style>
+</head>
+<body>
+<div class="notice">FICTIONAL DEMO WEBSITE — not the official website of The Bang Burger.</div>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#home">THE <span>BANG</span><br>BURGER</a>
+    <nav>
+      <a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">About</a>
+      <a href="#gallery">Gallery</a><a href="#location">Location</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#menu">Order Now 🍔</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="kicker">Welcome to</div>
+    <h1>THE BANG<br><span>BURGER</span></h1>
+    <p>Big burgers. Bold flavors. Bang on taste! Freshly made, seriously loaded and completely fictional for this demo.</p>
+    <div class="actions">
+      <a class="btn" href="#menu">View Menu 🍔</a>
+      <a class="btn dark" href="#contact">Order on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+<div class="wrap">
+  <h2 class="title">OUR <span>MENU</span></h2>
+  <div class="menu-grid">
+    <article class="card"><div class="food">🍔</div><h3>Bang Classic</h3><p>Juicy grilled patty, cheese, lettuce, onions, pickles & signature sauce.</p><div class="price">₹199</div></article>
+    <article class="card"><div class="food">🍔</div><h3>Bang Crunch</h3><p>Crispy chicken, cheese, lettuce & a creamy bang sauce.</p><div class="price">₹219</div></article>
+    <article class="card"><div class="food">🌶️🍔</div><h3>Bang Spicy</h3><p>Spicy grilled patty with jalapeños, cheese & spicy mayo.</p><div class="price">₹229</div></article>
+    <article class="card"><div class="food">🍔🔥</div><h3>Bang BBQ</h3><p>Smoky BBQ patty with onions, cheese, lettuce & BBQ sauce.</p><div class="price">₹229</div></article>
+  </div>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="wrap about-grid">
+  <div><h2>MADE TO <span style="color:var(--gold)">BANG.</span></h2>
+  <p>At The Bang Burger, every bite is designed to be bold, juicy and memorable. This fictional concept focuses on a modern burger-joint experience with premium-looking presentation.</p>
+  <a class="btn" href="#contact">Know More →</a></div>
+  <div class="features">
+    <div class="feature">🍔<b>Premium Ingredients</b><small>Fresh and tasty ingredients.</small></div>
+    <div class="feature">🔥<b>Bold Flavors</b><small>Signature sauces and spices.</small></div>
+    <div class="feature">⚡<b>Quick Service</b><small>Fast, fresh and hot.</small></div>
+    <div class="feature">❤️<b>Made With Love</b><small>Passion in every bite.</small></div>
+  </div>
+</div>
+</section>
+
+<section id="gallery">
+<div class="wrap"><h2 class="title">FOOD <span>GALLERY</span></h2>
+<div class="gallery"><div class="shot">🍔</div><div class="shot">🍟</div><div class="shot">🍔</div><div class="shot">🥤</div><div class="shot">🍔🍟</div></div>
+</div>
+</section>
+
+<section class="contact" id="location">
+<div class="wrap"><h2 class="title">VISIT <span>US</span></h2>
+<div class="contact-grid">
+  <div class="contact-card"><h3>📍 Location</h3><p>123 Flavor Street<br>Foodie Lane, Burger City<br>FC 400001</p></div>
+  <div class="contact-card"><h3>🕐 Opening Hours</h3><p>Mon–Fri: 11:00 AM – 11:00 PM<br>Saturday: 11:00 AM – 12:00 AM<br>Sunday: 11:00 AM – 11:00 PM</p></div>
+  <div class="contact-card" id="contact"><h3>📞 Contact</h3><p>+91 98765 43210<br>hello@thebangburger.example<br>@thebangburger</p></div>
+</div>
+</div>
+</section>
+</main>
+
+<a class="whatsapp" href="https://wa.me/919876543210?text=Hi%20The%20Bang%20Burger%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank">💬 WhatsApp</a>
+<footer>© 2026 The Bang Burger — Fictional demo concept. Built as a portfolio example.</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener('click',e=>{
+    const target=document.querySelector(link.getAttribute('href'));
+    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth'});}
+  });
+});
+document.querySelector('.btn[href="#menu"]').addEventListener('click',()=>console.log('Demo order button clicked'));
+</script>
+</body>
+</html>
